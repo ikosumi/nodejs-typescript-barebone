@@ -1,0 +1,52 @@
+{
+  "name": "nodejs-typescript-barebone",
+  "version": "0.0.0",
+  "description": "A minimalistic nodejs typescript project as a template.",
+  "author": "Ilir Kosumi",
+  "license": "MIT",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "start": "ts-node-dev --respawn src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "format": "prettier . --write",
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "NodeJS",
+    "starter",
+    "kit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikosumi/nodejs-typescript-barebone.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "tslib": "2.6.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.1.0",
+    "eslint": "9.x",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
+    "jest": "^29.7.0",
+    "jest-extended": "^4.0.2",
+    "nodemon": "^3.1.4",
+    "prettier": "3.3.3",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1"
+  }
+}
