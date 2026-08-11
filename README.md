@@ -1,19 +1,17 @@
 # Node.js TypeScript Barebone
 
-A minimalistic Node.js TypeScript project template designed to serve as a starting point for Node.js applications using TypeScript.
+A minimal Node.js + TypeScript starter template with modern tooling.
 
-## Description
+## Tech Stack
 
-This project provides a basic structure for Node.js applications with TypeScript support. It includes essential configurations for
-TypeScript, ESLint, Jest, and Prettier, making it easy to start developing Node.js applications with strong typing and code quality tools in place.
+- Node.js 22+
+- TypeScript 5
+- ESLint 9
+- Prettier 3
+- Vitest 3
+- TSX for local development
 
 ## Installation
-
-To get started with this project, follow these steps
-
-1. Clone this repository
-2. Navigate to the project directory
-3. Install dependencies
 
 ```shell
 git clone https://github.com/ikosumi/nodejs-typescript-barebone.git
@@ -23,15 +21,25 @@ yarn install
 
 ## Usage
 
-After installation, you can use the following commands
+```shell
+# run in watch mode
+yarn dev
+
+# build TypeScript
+yarn build
+
+# run built output
+yarn start
+```
+
+## Testing
 
 ```shell
-# to start the development server
-yarn dev
-# build the app
-yarn build
-# start the app
-yarn start
+# run tests once with coverage
+yarn test
+
+# run tests in watch mode
+yarn test:watch
 ```
 
 ## Project Structure
@@ -42,26 +50,16 @@ nodejs-typescript-barebone/
 │   ├── app.ts
 │   ├── index.ts
 │   └── types/
-│       └── index.ts
+│       └── index.d.ts
 ├── test/
 │   └── app.spec.ts
 ├── docs/
-│   └── app-explanation.md
-├── .eslintrc.js
-├── .gitignore
-├── jest.config.ts
+│   └── explanation.md
+├── eslint.config.mjs
+├── vitest.config.ts
 ├── package.json
-├── README.md
 ├── tsconfig.json
 └── yarn.lock
-```
-
-## Testing
-
-This project uses Jest for testing. To run tests
-
-```shell
-yarn test
 ```
 
 ## License
