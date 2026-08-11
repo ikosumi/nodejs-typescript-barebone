@@ -1,4 +1,4 @@
-// /test/app.spec.ts
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import App from '../src/app';
 
@@ -12,13 +12,13 @@ describe('App', () => {
 
   beforeEach(() => {
     app = new App(mockConfig);
-    jest.useFakeTimers();
-    jest.spyOn(console, 'log').mockImplementation(() => {});
+    vi.useFakeTimers();
+    vi.spyOn(console, 'log').mockImplementation(() => {});
   });
 
   afterEach(() => {
-    jest.useRealTimers();
-    jest.restoreAllMocks();
+    vi.useRealTimers();
+    vi.restoreAllMocks();
   });
 
   it('should create an instance of App', () => {
@@ -30,7 +30,7 @@ describe('App', () => {
   });
 
   it('should start the app and emit "started" event', () => {
-    const startedListener = jest.fn();
+    const startedListener = vi.fn();
     app.on('started', startedListener);
 
     app.start();
@@ -42,12 +42,12 @@ describe('App', () => {
   });
 
   it('should run task after start', () => {
-    const taskCompletedListener = jest.fn();
+    const taskCompletedListener = vi.fn();
     app.on('taskCompleted', taskCompletedListener);
 
     app.start();
 
-    jest.runAllTimers();
+    vi.runAllTimers();
 
     expect(console.log).toHaveBeenCalledWith('Running task...');
     expect(console.log).toHaveBeenCalledWith('Task completed');
